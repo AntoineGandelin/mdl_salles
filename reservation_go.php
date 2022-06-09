@@ -1,46 +1,35 @@
-<?php
-	// Déterminer les points faibles liés à cette page :
-	// erreurs envisageables, possibilités de fraude, failles de sécurité, etc
-	// Proposer une correction pour chaque point trouvé
-	// =================================================
-	// Pour chaque point rencontré, procéder par étapes
-	// - description du problème
-	// - solution envisagée (textuelle)
-	// - solution envisagée (code)
-	// Remarque : ne vous lancez dans le code qu'une fois 
-	// l'ensemble des points faibles repérés
-	// =================================================
-	
-	
+<?php	
 	// 0 - La page attend des paramètres, ils peuvent ne pas être présents	
 	// Solution : Tester la présence des paramètres attendus
 	
 	// 1 - Pas de session - même une personne non identifiée peut accéder à cette page
-	// Solution : ajouter session_start()	
+	// Solution : ajouter session_start()
+	session_start();
 	
 	// 2 - La connexion apparaît directment dans chaque page, cette répétition
 	// peut provoquer des erreurs et des trous de sécurité
 	// Solution : on inclut une page de connexion (on en profite pour changer le mot de passe)
+	// Exemple : $conn = pg_connect('host=127.0.0.1 dbname=mdl_salle user=mdl_read password=read');
 	$conn = pg_connect('host=127.0.0.1 dbname=mdl_salle user=mdl_admin password=admin');	
 	
 	// 3 - Le paramètre passé ($_GET) peut contenir des tentatives d'injectin SQL
 	// Solution : on peut limiter la taille de la chaîne et s'assurer qu'elle ne contient 
 	// pas de caractères interprétables par le moteur de données (; par exemple ou espace) 
-	$login = $_GET['log'];
+	$login = substr($_GET['log'], 0, 10);
 
 	// 4 - Le paramètre passé ($_GET) peut contenir des tentatives d'injectin SQL
 	// Solution : comme un nombre est attendu, on force le type de la variable en entier 
 	// 5 - Le login étant passé en paramètre, on peut passer n'importe quel login
 	// Solution : utilisez $_SESSION plutôt que $_GET pour obtenir le login
-	$login = $_GET['log'];
+	$login = $_SESSION['log'];
 
 	// 6 - Le paramètre passé ($_GET) peut contenir des tentatives d'injectin SQL
 	// Solution : comme un nombre est attendu, on force le type de la variable en entier 
-	$id_reservation = $_GET['id'];
+	$id_reservation = (int)$_GET['id'];
 
 	// 7 - Le paramètre passé ($_GET) peut contenir des tentatives d'injectin SQL
 	// Solution : comme un nombre est attendu, on force le type de la variable en entier 
-	$choix = $_GET['ch'];
+	$choix = (int)$_GET['ch'];
 
 	$chaine_req = "select id_membre from membre where login='".$login."'";
 
