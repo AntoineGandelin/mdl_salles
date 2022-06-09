@@ -1,4 +1,5 @@
 <?php
+	// Création d'une fonction permettant de générer une clé unique afin de réserver une salle
 	function generer_cle() 
 		{
 		$chaine = '!!@@##**2233445566778899aaaaaaaabbccddeeeeeeeeefghiiiiijkmmnnooooooppqrrrrsssttwxyzAAAAAAAABBCCDDEEEEEEEEEFGHJKLMMNNPPQRRRRSSSTTWXYZ';
@@ -6,6 +7,7 @@
 		$cle=$chaine[rand(0,132)].$chaine[rand(0,132)].$chaine[rand(0,132)].$chaine[rand(0,132)].$chaine[rand(0,132)].$chaine[rand(0,132)];
 		return $cle;
 		}
+
 	$num_reservation = $_GET['vo']*1; 	
 	$tab_aff = $_GET['ok'];
 	$cle = generer_cle();
@@ -17,7 +19,8 @@
 	foreach ($tab_aff as $aff)
 		{
 		$chaine_req = 	$chaine_req.'('.$num_reservation.', '.$aff.", '".$cle."'),";  		
-		}	
+		}
+	// La fonction strlen permet de calculer la taille d'une chaîne
 	$chaine_req = substr($chaine_req, 0, strlen($chaine_req)-1);
 	pg_query($chaine_req);
 	$req = pg_query('commit');
@@ -31,6 +34,6 @@
 		echo 'Erreur, la réservation n\'a pas été affectée !';
 		}
 	echo '<br /><a href="affectation_reservation.php">Revenir à la page d\'affectation des membres</a>';
-	echo '<br /><a href="accueil.php">Revenir à la page d\'accueil</a>';
+	echo '<br /><a href="index.php">Revenir à la page d\'accueil</a>';
 ?>
 

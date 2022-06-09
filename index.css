@@ -1,52 +1,111 @@
-body
+body 
 	{
-	font-family: sans-serif;
 	font-size: 20px;
-	text-align: center;	
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 	}
-	
-h1
+
+h1 
 	{
 	font-size: 24px;
 	padding: 0px;
 	margin: 0px;
 	}
-	
-header
+
+header 
 	{
 	padding: 10px;
-	background-color: whitesmoke;	
+	background-color: #080808;
+	margin-bottom: 20px;
+	color: white;
 	height: 30px;
-	}	
-	
-article
+	}
+
+main 
+	{
+	text-align: center;
+	}
+
+.Titre 
+	{
+	text-align: center;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	}
+
+.img 
+	{
+	text-align: center;
+	}
+
+.btn 
+	{
+	height: 40px;
+	width: 200px;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	background-color: white;
+	border-radius: 20px;
+	border: 2px solid #A2D9CE;
+	}
+
+.btn:hover 
+	{
+	background-color: #A2D9CE;
+	}
+
+td 
+	{
+	padding-left: 10px;
+	padding-right: 10px;
+	}
+
+tr 
+	{
+	background-color: #e0ffff;
+	}
+
+table 
 	{
 	margin: auto;
-	width: 400px;
-	margin-top: 10px;
-	padding-left: 20px;
-	padding-right: 20px;
-	border: solid 2px black;
-	background-color: springgreen;	
 	}
 
-.fini
+.droite 
 	{
-	background-color: tomato;
+	text-align: right;
 	}
 
-.prevu
+input 
 	{
-	background-color: cyan;
+	width: 340px;
+	padding: 0px;
+	margin: 2px;
+	font-size: 20px;
 	}
 
-.encours
+input[type=submit], input[type=reset] 
 	{
-	background-color: lightgreen;
+	background-color: white;
+	width: 348px;
+	padding: 4px;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	border-radius: 20px;
+	border: 2px solid darkblue;
 	}
 
-.small
+input[type=submit]:hover, input[type=reset]:hover 
 	{
-	font-size: 12px;
-	font-weight: bold;	
+	background-color: darkblue;
+	color: white;
+	}
+
+select 
+	{
+	border: 2px solid darkblue;
+	width: 500px;
+	padding: 5px;
+	border-radius: 4px;
+	font-size: 20px;
+	}
+
+.ligne 
+	{
+	width: 200px;
 	}

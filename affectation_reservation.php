@@ -14,7 +14,7 @@
 		</header>
 		<main>
 			<select onchange="ajax_affect()">
-				<option value="">--- Sélectionner une réservation ---</option>
+				<option style="text-align: center;" value="">--- Sélectionner une réservation ---</option>
 				<?php
 					$conn = pg_connect('host=127.0.0.1 dbname=mdl_salle user=mdl_admin password=admin');	
 					$chaine_req = 'select * from reservation order by date_debut desc';
@@ -22,7 +22,7 @@
 					$ligne = pg_fetch_assoc($req);
 					while($ligne) 
 						{
-						echo '<option value="'.$ligne['id_reservation'].'">';
+						echo '<option style="text-align: center;" value="'.$ligne['id_reservation'].'">';
 						echo $ligne['nom'];	
 						echo '</option>';
 						$ligne = pg_fetch_assoc($req);
@@ -35,7 +35,7 @@
 			
 			</div>
 			<br>
-			<button class="back" onclick="window.location.href='index.php'">Retourner à l'accueil</button>
+			<button class="btn" style="cursor: pointer;" onclick="window.location.href='index.php'">Retourner à l'accueil</button>
 		</main>
 	</body>
 </html>

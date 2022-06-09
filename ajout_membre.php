@@ -15,18 +15,18 @@
 			<form action="ajout_membre_go.php" method="get">
 				<table>
 					<tr><td class="droite">Etablissement</td><td><input type="text" name="etab" length="100" required></td></tr>
-					<tr class="yellow"><td class="droite">Ville</td><td><input type="text" name="ville" length="100" required></td></tr>
+					<tr><td class="droite">Ville</td><td><input type="text" name="ville" length="100" required></td></tr>
 					<tr><td class="droite">Code postal</td><td><input type="text" name="code_postal" length="100" required></td></tr>
 					<tr><td class="droite">E-mail</td><td><input type="email" name="mail" length="100" required></td></tr>
-					<tr class="yellow"><td class="droite">N° de téléphone</td><td><input type="tel" name="tel" length="100" required></td></tr>
+					<tr><td class="droite">N° de téléphone</td><td><input type="tel" name="tel" length="100" required></td></tr>
 					<tr><td class="droite">Nom d'utilisateur</td><td><input type="text" name="login" length="100" required></td></tr>
-					<tr class="yellow"><td class="droite">Mot de passe</td><td><input type="password" name="mdp" required></td></tr>
-					<tr><td></td><td><input type="submit" value="Enregistrer"></td></tr>
-					<tr><td></td><td><input type="reset" value="Réinitialiser"></td></tr>
+					<tr><td class="droite">Mot de passe</td><td><input type="password" name="mdp" required></td></tr>
+					<tr><td></td><td><input type="submit" style="cursor: pointer;" value="Enregistrer"></td></tr>
+					<tr><td></td><td><input type="reset" style="cursor: pointer;" value="Réinitialiser"></td></tr>
 				</table>
 			</form>
 			<br>
-			<button class="back" onclick="window.location.href='index.php'">Retourner à l'accueil</button>
+			<button class="btn" style="cursor: pointer;" onclick="window.location.href='index.php'">Retourner à l'accueil</button>
 		</main>
 	</body>
 </html>

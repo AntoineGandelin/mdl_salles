@@ -22,12 +22,12 @@
 					<tr class="yellow"><td class="droite">Activité exercée</td><td><input type="text" name="activite" length="150" required></td></tr>
 					<tr><td class="droite">Horaire de début</td><td><input type="datetime-local" name="deb" length="150" required></td></tr>
 					<tr class="yellow"><td class="droite">Horaire de fin</td><td><input type="datetime-local" name="fin" length="150" required></td></tr>
-					<tr class="droite"><td></td><td><input type="submit" value="Enregistrer"></td></tr>
-					<tr class="droite"><td></td><td><input type="reset" value="Réinitialiser"></td></tr>
+					<tr class="droite"><td></td><td><input type="submit" style="cursor: pointer;" value="Enregistrer"></td></tr>
+					<tr class="droite"><td></td><td><input type="reset" style="cursor: pointer;" value="Réinitialiser"></td></tr>
 				</table>
 			</form>
 			<br>
-			<button class="back" onclick="window.location.href='index.php'">Retourner à l'accueil</button>
+			<button class="btn" style="cursor: pointer;" onclick="window.location.href='index.php'">Retourner à l'accueil</button>
 		</main>
 	</body>
 </html>
